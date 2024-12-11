@@ -1,30 +1,22 @@
 let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector("#reset");
-/*const Winner = () => {
+const Winner = () => {
+let win=false;
 
-[]
     for (let pattern of Winpatterns) {
         if (boxes[pattern[0]].innerText !== "" && boxes[pattern[1]].innerText !== "" && boxes[pattern[2]].innerText !== "") {
             if (boxes[pattern[0]].innerText === boxes[pattern[1]].innerText && boxes[pattern[1]].innerText === boxes[pattern[2]].innerText) {
                 console.log("Winner is " + boxes[pattern[0]].innerText);
+                win=true;
             }
         }
-    }
-}*/
-const Winner=()=>{
-    for(let pattern of Winpatterns){
-        let first=boxes[pattern[0]].innerText;
-        let second=boxes[pattern[1]].innerText;
-        let third=boxes[pattern[2]].innerText;
-
-        if(first!=""&&second!=""&&third!=""){
-            if(first===second&&second===third){
-                console.log("Winner");
-            }
-        }
-
     }
 };
+/*const Winner=()=>{
+    for(patterns of Winpatterns){
+        console.log(patterns)
+    }
+};*/
 
 const Winpatterns = [
     [0, 1, 2],
@@ -36,7 +28,6 @@ const Winpatterns = [
     [3, 4, 5],
     [6, 7, 8]
 ];
-
 let turn0 = true;
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -50,8 +41,10 @@ boxes.forEach((box) => {
             turn0 = true;
         }
         box.disabled = true;
+        Winner();
     })
-    Winner();
+  
 })
+
 
 

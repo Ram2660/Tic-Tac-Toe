@@ -44,3 +44,8 @@ body{
     border-radius: 1rem;
     border: none;
 }
+#winner{
+    font-size: 5vmin;
+    font-weight: 700;
+    color: #d6c372;
+}
