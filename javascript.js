@@ -63,16 +63,16 @@ boxes.forEach((box) => {
         if (turn0) {
             box.innerHTML = "O"
             turn0 = false;
-            count++;
+            
         }
         else {
             box.innerHTML = "X"
             turn0 = true;
-            count++;
+            
         }
         box.disabled = true;
         Winner();
-
+        
     })
 
 })
