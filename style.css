@@ -49,3 +49,14 @@ body{
     font-weight: 700;
     color: #d6c372;
 }
+#newgame{
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+.hide{
+    display: none;
+}

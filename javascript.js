@@ -1,22 +1,49 @@
 let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector("#reset");
+let winner = document.querySelector("#winner");
+let newgame = document.querySelector("#newgame");
+let container = document.querySelector(".mess");
+const newg = () => {
+    for (let box of boxes) {
+        box.innerText = "";
+        box.disabled = false;
+        turn0 = true;
+        container.classList.add("hide")
+        winner.innerText = "";
+
+
+    }
+}
+
+
+newgame.addEventListener("click", newg);
+
+
+
+
+const disableButton = () => {
+    for (let box of boxes) {
+        box.disabled = true;
+    }
+}
+const showwinner = (winne) => {
+    winner.innerText = `Congratulations, Winner is ${winne}`;
+    container.classList.remove("hide");
+    disableButton();
+}
 const Winner = () => {
-let win=false;
+
 
     for (let pattern of Winpatterns) {
         if (boxes[pattern[0]].innerText !== "" && boxes[pattern[1]].innerText !== "" && boxes[pattern[2]].innerText !== "") {
             if (boxes[pattern[0]].innerText === boxes[pattern[1]].innerText && boxes[pattern[1]].innerText === boxes[pattern[2]].innerText) {
                 console.log("Winner is " + boxes[pattern[0]].innerText);
-                win=true;
+
+                showwinner(boxes[pattern[0]].innerText);
             }
         }
     }
 };
-/*const Winner=()=>{
-    for(patterns of Winpatterns){
-        console.log(patterns)
-    }
-};*/
 
 const Winpatterns = [
     [0, 1, 2],
@@ -43,8 +70,10 @@ boxes.forEach((box) => {
         box.disabled = true;
         Winner();
     })
-  
+
 })
+//reset.addEventListener("click", newg)
+
 
 
 
