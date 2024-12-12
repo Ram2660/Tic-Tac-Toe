@@ -3,6 +3,7 @@ let reset = document.querySelector("#reset");
 let winner = document.querySelector("#winner");
 let newgame = document.querySelector("#newgame");
 let container = document.querySelector(".mess");
+let count=0;
 const newg = () => {
     for (let box of boxes) {
         box.innerText = "";
@@ -62,17 +63,20 @@ boxes.forEach((box) => {
         if (turn0) {
             box.innerHTML = "O"
             turn0 = false;
+            count++;
         }
         else {
             box.innerHTML = "X"
             turn0 = true;
+            count++;
         }
         box.disabled = true;
         Winner();
+
     })
 
 })
-//reset.addEventListener("click", newg)
+reset.addEventListener("click", newg)
 
 
 
