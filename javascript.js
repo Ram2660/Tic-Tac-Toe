@@ -59,7 +59,7 @@ const Winpatterns = [
 let turn0 = true;
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        console.log("clicked")
+        
         if (turn0) {
             box.innerHTML = "O"
             turn0 = false;
